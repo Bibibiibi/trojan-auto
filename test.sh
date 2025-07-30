@@ -13,14 +13,16 @@ PORT=$(shuf -i 40000-60000 -n 1)
 
 # ===== 架构识别 =====
 ARCH=$(uname -m)
+
 case "$ARCH" in
   x86_64) ARCH_DL="amd64" ;;
-  aarch64) ARCH_DL="arm64" ;;
-  armv7l) ARCH_DL="armv7" ;;
-  mips64) ARCH_DL="mips64" ;;
-  mips64el) ARCH_DL="mips64le" ;;
+  aarch64) ARCH_DL="armv8" ;;       # ARM 64 → armv8
+  armv7l) ARCH_DL="armv7" ;;        # ARM 32 → armv7
+  armv6l) ARCH_DL="armv6" ;;
+  armv5*) ARCH_DL="armv5" ;;
   *) echo "❌ 不支持的架构: $ARCH"; exit 1 ;;
 esac
+
 
 echo -e "\n🧠 检测到架构: $ARCH → 下载版本: $ARCH_DL"
 echo -e "🔐 密码: $PASSWORD"
