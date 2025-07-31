@@ -102,4 +102,4 @@ systemctl restart trojan-go
 
 # ===== 输出 Surge/Mihomo 配置格式 =====
 echo -e "\n✅ Trojan-Go 部署完成！以下是 Surge/Mihomo 配置：\n"
-echo "🇯🇵 TrojanGo = trojan,$DOMAIN,$PORT,password=\"$PASSWORD\",tls=true,sni=$DOMAIN,skip-cert-verify=true,udp-relay=true"
+echo "TrojanGo = trojan,$DOMAIN,$PORT,password=\"$PASSWORD\",tls=true,sni=$DOMAIN,skip-cert-verify=true,udp-relay=true"
